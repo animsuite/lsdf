@@ -16,3 +16,5 @@ categories = []
 [dependencies]
 ron = "0.7.0"
 serde = { version = "1.0.126", features = ["derive"] }
+log = "0.4.14"
+profiling = "1.0.5"

@@ -31,7 +31,9 @@ pub struct AnimationDeclaration {
 
 impl AnimationDeclaration {
     /// Load an animation from a file
+    #[profiling::function]
     pub fn load(path: &PathBuf) -> Result<Self, ron::Error> {
+        log::trace!("Loading `AnimationDeclaration` from: {:?}", path);
         let file = std::fs::read_to_string(path)?;
         let mut decoded: Self = ron::from_str(&file)?;
         decoded.loaded_path = path.clone();
@@ -39,13 +41,16 @@ impl AnimationDeclaration {
     }
 
     /// Save an animation to a file
+    #[profiling::function]
     pub fn save_as(&self, path: &PathBuf) -> Result<(), ron::Error> {
+        log::trace!("Saving `AnimationDeclaration` to: {:?}", path);
         let encoded = ron::ser::to_string_pretty(self, PrettyConfig::default())?;
         std::fs::write(path, encoded)?;
         Ok(())
     }
 
     /// Save an animation to the file it was loaded from
+    #[profiling::function]
     pub fn save(&self) -> Result<(), ron::Error> {
         self.save_as(&self.loaded_path)
     }
