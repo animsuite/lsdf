@@ -1,0 +1,18 @@
+[package]
+name = "lsdf"
+version = "0.1.0"
+authors = ["Evan Pratten <ewpratten@gmail.com>"]
+documentation = "https://docs.rs/lsdf"
+edition = "2021"
+description = "Lightweight Scene Description Format"
+readme = "README.md"
+homepage = "https://github.com/animsuite/lsdf"
+repository = "https://github.com/animsuite/lsdf"
+license = "GPL-3.0"
+keywords = []
+categories = []
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+ron = "0.7.0"
+serde = { version = "1.0.126", features = ["derive"] }
