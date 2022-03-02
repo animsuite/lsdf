@@ -1,0 +1,6 @@
+[book]
+authors = ["Evan Pratten"]
+language = "en"
+multilingual = false
+src = "docs"
+title = "Lightweight Scene Description Format"
