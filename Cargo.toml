@@ -14,7 +14,7 @@ categories = []
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
-ron = "0.7.0"
+ron = "0.8.1"
 serde = { version = "1.0.126", features = ["derive"] }
 log = "0.4.14"
 profiling = "1.0.5"
